@@ -18,9 +18,12 @@
   },
   "homepage": "https://github.com/AriLaurin/EKSAMEN-04-2023#readme",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "dotenv": "^16.0.3",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
-    "mongoose": "^7.0.5"
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.0.5",
+    "validator": "^13.9.0"
   }
 }

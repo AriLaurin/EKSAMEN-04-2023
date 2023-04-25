@@ -23,6 +23,10 @@ formButton.addEventListener("click", async (e) => {
            
         console.log(shoe);
 
+        if (shoe.shoes){ //if user data has been posted
+            location.assign("/"); //send them to adminpage
+        }
+
     } catch (err) {
         console.log(err)
     }
