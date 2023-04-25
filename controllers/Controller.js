@@ -1,13 +1,13 @@
-const Product = require("../models/Product");
+const Product = require("../models/Products");
 
 module.exports.home_get = async (req,res) => {
     try {
-        const getDB = await User.find();
+        const getDB = await Product.find();
         res.render("home", {name: getDB})
     }
     catch(err){
         console.log(err);
-        res.staus(400)
+        res.status(400)
     }
 
 }

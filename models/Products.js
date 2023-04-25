@@ -7,7 +7,7 @@ const testProduct = new mongoose.Schema({
     }
   });
   
-  const Product = mongoose.model('Shoe', testUser);
+  const Product = mongoose.model('Shoe', testProduct);
 
 //   const newUser = new User({
 //   name: 'NINETEEN YOTTABITES'
@@ -27,4 +27,4 @@ const testProduct = new mongoose.Schema({
   // })
 
 
-module.exports = Products;
+module.exports = Product;

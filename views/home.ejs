@@ -23,7 +23,6 @@
 
 <script>
   
-    const button = document.querySelector("button");
     const form = document.querySelector("form");
     const nutcont = document.querySelector(".nut-container");
 
@@ -52,26 +51,6 @@
             console.log(err)
         }
 
-    })
-
-
-
-    button.addEventListener("click", async (e) => {
-      try {
-            //sender data som lager bruker
-            const res = await fetch('/',{
-                method: 'post',
-                body: JSON.stringify({}),
-                headers: {'Content-Type': 'application/json'}
-            })
-            //venter på user data
-            const data = await res.json()
-            console.log(data)
-
-
-        } catch (err) {
-            console.log(err)
-        }
     })
 
 </script>
