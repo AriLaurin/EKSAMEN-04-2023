@@ -1,6 +1,123 @@
-.product-cont{
-    border-left: 0.5em solid black;
+body{
+    background-color: #151515;
 }
+
+h1, h2, h3, a, p, footer{
+    color: #E9B872;
+    font-family: Caveat;
+    font-size: 1.5em;
+}
+
 a{
-    padding: 1em;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+
+.product-cont{
+    border-left: 0.5em solid #E9B872;
+    padding-left: 1em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+.product-cont:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.product-cont:hover > h3{
+    color: #E9B872;
+}
+
+.product-cont > h3{
+    color:aliceblue;
+}
+
+.product-cont > p{
+    color:aliceblue;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+#tittel-home{
+    font-family: Sedgwick Ave Display;
+    font-size: 3em;
+    text-align: center;
+}
+
+.container {
+    display: grid;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "main";
+      justify-items: center;
+      align-items: center;
+  }
+  
+  .main {
+     grid-area: main;
+     }
+
+.form-cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem; /* adjust as needed */
+    border-left: 0.5em solid #E9B872;
+    padding-left: 1em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  form > label {
+    margin-bottom: 0.5rem; /* adjust as needed */
+  }
+
+  form > input {
+    padding: 0.5rem; /* adjust as needed */
+  }
+
+  form > label, h1 {
+    font-family: Source Code Pro;
+    font-weight: bold;
+    color: #E9B872;
+  }
+
+  form > button, input {
+    background-color: #E9B872;
+    border: 0px;
+  }
+
+  form > button {
+    margin-top: 1em;
+  }
+
+  form > button:hover {
+    cursor: pointer;
+    background-color: #b9863e;
+  }
+
+  form > div {
+    color: #b9863e;
+  }
+
+  .guide-cont > h3 {
+    color: red;
+  }
+
+footer{
+    text-align: center;
 }

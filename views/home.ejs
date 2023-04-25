@@ -1,24 +1,36 @@
 <%- include('partials/header'); -%>
 
-<header>
-  <div class="headings">
-    <h1>Råeste Produkter (TOPP 10):</h1>
-    <div class="nut-container">
-      <%if(productresult.length > 0){%>
-        <%productresult.forEach(shoe => {%>
-          <div class="product-cont">
-            <h3><%=shoe.tittel%></h3>
-            <p><b>MODELL:</b> <%=shoe.modell%></p>
-            <p><b>MERKE:</b> <%=shoe.merke%></p>
-            <p><b>PRIS:</b> <%=shoe.pris%>kr</p>
-            <p><b>ARTIKKELNUMMER:</b> <%=shoe.artikkelnummer%></p>
-          </div>
-        <%})%>
-      <%}else{%>
-        <p>THERES NOTHING TO DISPLAY</p>
-      <%}%>
+<div class="container">
+  <div class="main">
+    <h1 id="tittel-home">KICKSHUB</h1>
+    <div class="links">
+      <a href="/login">
+        LOGIN
+      </a>
+      <a href="/admin">
+        ADMIN PAGE
+      </a>
     </div>
-</header>
+
+    <div class="headings">
+      <h1>Råeste Produkter (TOPP 10):</h1>
+      <div class="nut-container">
+        <%if(productresult.length > 0){%>
+          <%productresult.forEach(shoe => {%>
+            <div class="product-cont">
+              <h3><%=shoe.tittel%></h3>
+              <p><b>MODELL:</b> <%=shoe.modell%></p>
+              <p><b>MERKE:</b> <%=shoe.merke%></p>
+              <p><b>PRIS:</b> <%=shoe.pris%>kr</p>
+              <p><b>ARTIKKELNUMMER:</b> <%=shoe.artikkelnummer%></p>
+            </div>
+          <%})%>
+        <%}else{%>
+          <p>THERES NOTHING TO DISPLAY</p>
+        <%}%>
+      </div>
+  </div>
+</div>
 
 
 <%- include('partials/footer'); -%>

@@ -1,95 +1,113 @@
 <%- include('partials/header'); -%>
 
 <header>
+    <div class="container">
+        <div class="main">
+            <div class="links">
+                <a href="/admin">
+                  ADMIN
+                </a>
+                <a href="/">
+                  HJEM
+                </a>
+              </div>
+            <div class="innhold">
+                <h1>
+                    GUIDE TIL ADMIN BRUKERE
+                </h1>
+                <h3>INNHOLD:</h3>
+                <a href="#1">GRUNNLEGGENDE KONTO OPPSETT >></a>
+                <br>
+                <a href="#2">NODE APPLIKASJON PÅ UBUNTU WEBSERVER >></a>
+                <br>
+                <a href="#ip">IP PLAN >></a>
+                <br>
+                <a href="#nett">NETT DIAGRAM >></a>
+            </div>
+        
+        
+        
+                <h2 id="1">HVORDAN OPPRETTE BRUKERE, LEGGE TIL SSH NØKKEL OG GI SUDO RETTIGHETER</h2>
+            <div class = "guide-cont">
+                <h3>legg til en ny bruker med (sudo adduser username)</h3>
+                <img src="/IMG/b1.png">
+            </div>
+        
+            <div class = "guide-cont">
+                <h3>Fyll inn krevende informasjon
+                </h3>
+                <img src="/IMG/b2.png">
+            </div>
+        
+            <div class = "guide-cont">
+                <h3>gå inn på den nye bruker mappen med, (cd testbruker), deretter så lager du en .ssh mappe med (mkdir .ssh) og gå inn i den</h3>
+                <img src="/IMG/b3.png">
+            </div>
+        
+            <div class = "guide-cont">
+                <h3>lag en ny fil (authorized_keys) og gå inn i den (nano authorized_keys)
+                </h3>
+                <img src="/IMG/b4.png" style = "max-width: 1000px; max-height: 1000px;">
+            </div>
+        
+            <div class = "guide-cont">
+                <h3>Finn din public SSH key, og legg den inn i filen. Deretter lagrer du filen med (CTRL+O) og gå ut av den med (CTRL+X)</h3>
+                <img src="/IMG/b5.png" style = "max-width: 1000px; max-height: 1000px;">
+            </div>
+        
+            <div class = "guide-cont">
+                <h3>For å gi noen sudo-rettigheter, må du være logget på en eksisterende sudo bruker, og skrive inn følgende kommando (usermod -aG sudo brukernavn)</h3>
+                <img src="/IMG/b6.png">
+            </div>
+        
+            <h2 id="2">HVORDAN HOSTE NODE PÅ UBUNTU WEBSERVER</h2>
+            <div class = "guide-cont">
+                <h3>For å hoste en node-applikasjon, må du navigere til (/var), lage en (www) mappe og naviger videre til www mappen (bruk cd og mkdir som i bildet)</h3>
+                <img src="/IMG/b7.png">
+            </div class = "guide-cont">
+        
+            <div class = "guide-cont">
+                <h3>Nå som du er i (www) mappen, få tak i prosjektet ditt, med f.eks (git clone dittrepository)
+                </h3>
+                <img src="/IMG/b8.png">
+            </div>
+        
+            <div class = "guide-cont">
+                <h3>Naviger inn i prosjektet ditt, og installer node med (apt install nodejs)</h3>
+                <img src="/IMG/b9.png">
+            </div class = "guide-cont">
+        
+            <div class = "guide-cont">
+                <h3>Deretter, installer npm også, med (apt install npm)</h3>
+                <img src="/IMG/b10.png">
+            </div >
+        
+            <div class = "guide-cont">
+                <h3>Nå som du npm og node, kan du laste ned node_modules mappen din med (npm i)</h3>
+                <img src="/IMG/b11.png">
+            </div>
+        
+            <div class = "guide-cont">
+                <h3>Etter at du har installert node_modules, så kan du kjøre serveren med (node serverFilNavn)</h3>
+                <img src="/IMG/b12.png">
+            </div>
+        
+            <div class = "guide-cont">
+                <h3>Da kan du endelig besøke nettsiden din med bruk av IP eller domain navn.</h3>
+            </div>
+        
+            <div class = "guide-cont">
+                <h3 id="ip">IP-PLAN</h3>
+                <img src="/IMG/ipPlan.png">
+            </div>
+            <div class = "guide-cont">
+                <h3 id="nett">NETTVERKS DIAGRAM</h3>
+                <img src="/IMG/nettverkdiagram.png">
+            </div>
+        </div>
+    </div>
   <div class="headings">
-    <div class="innhold">
-        <h1>
-            GUIDE TIL ADMIN BRUKERE
-        </h1>
-        <h3>INNHOLD:</h3>
-        <a href="#1">GRUNNLEGGENDE KONTO OPPSETT</a>
-        <a href="#2">NODE APPLIKASJON PÅ UBUNTU WEBSERVER</a>
-    </div>
-
-
-
-        <h2 id="1">HVORDAN OPPRETTE BRUKERE, LEGGE TIL SSH NØKKEL OG GI SUDO RETTIGHETER</h2>
-    <div>
-        <h3>legg til en ny bruker med (sudo adduser username)</h3>
-        <img src="/IMG/b1.png">
-    </div>
-
-    <div>
-        <h3>Fyll inn krevende informasjon
-        </h3>
-        <img src="/IMG/b2.png">
-    </div>
-
-    <div>
-        <h3>gå inn på den nye bruker mappen med, (cd testbruker), deretter så lager du en .ssh mappe med (mkdir .ssh) og gå inn i den</h3>
-        <img src="/IMG/b3.png">
-    </div>
-
-    <div>
-        <h3>lag en ny fil (authorized_keys) og gå inn i den (nano authorized_keys)
-        </h3>
-        <img src="/IMG/b4.png" style = "max-width: 1000px; max-height: 1000px;">
-    </div>
-
-    <div>
-        <h3>Finn din public SSH key, og legg den inn i filen. Deretter lagrer du filen med (CTRL+O) og gå ut av den med (CTRL+X)</h3>
-        <img src="/IMG/b5.png" style = "max-width: 1000px; max-height: 1000px;">
-    </div>
-
-    <div>
-        <h3>For å gi noen sudo-rettigheter, må du være logget på en eksisterende sudo bruker, og skrive inn følgende kommando (usermod -aG sudo brukernavn)</h3>
-        <img src="/IMG/b6.png">
-    </div>
-
-    <h2 id="2">HVORDAN HOSTE NODE PÅ UBUNTU WEBSERVER</h2>
-    <div>
-        <h3>For å hoste en node-applikasjon, må du navigere til (/var), lage en (www) mappe og naviger videre til www mappen (bruk cd og mkdir som i bildet)</h3>
-        <img src="/IMG/b7.png">
-    </div>
-
-    <div>
-        <h3>Nå som du er i (www) mappen, få tak i prosjektet ditt, med f.eks (git clone dittrepository)
-        </h3>
-        <img src="/IMG/b8.png">
-    </div>
-
-    <div>
-        <h3>Naviger inn i prosjektet ditt, og installer node med (apt install nodejs)</h3>
-        <img src="/IMG/b9.png">
-    </div>
-
-    <div>
-        <h3>Deretter, installer npm også, med (apt install npm)</h3>
-        <img src="/IMG/b10.png">
-    </div>
-
-    <div>
-        <h3>Nå som du npm og node, kan du laste ned node_modules mappen din med (npm i)</h3>
-        <img src="/IMG/b11.png">
-    </div>
-
-    <div>
-        <h3>Etter at du har installert node_modules, så kan du kjøre serveren med (node serverFilNavn)</h3>
-        <img src="/IMG/b12.png">
-    </div>
-
-    <div>
-        <h3>Da kan du endelig besøke nettsiden din med bruk av IP eller domain navn.</h3>
-    </div>
-
-    <div>
-        <h3>IP-PLAN</h3>
-        <img src="/IMG/ipPlan.png">
-    </div>
-    <div>
-        <h3>NETTVERKS DIAGRAM</h3>
-        <img src="/IMG/nettverkdiagram.png">
-    </div>
+ 
 
     </div>
 </header>
