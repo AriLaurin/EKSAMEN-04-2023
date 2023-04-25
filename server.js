@@ -22,5 +22,6 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true})
   .catch((err) => console.log(err));
 
 // routes
+app.get("/admin/veileder", requireAuth, (req,res) => res.render("veileder"));
 app.get('/admin', requireAuth, (req, res) => res.render('admin'));
 app.use(Routes);

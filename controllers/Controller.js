@@ -105,3 +105,7 @@ module.exports.login_post = async(req,res) => { //a function that renders our ro
         res.status(400).json({errors});
     }
 }
+
+module.exports.veileder_get = async (req,res) => {
+    res.render("veileder")
+}
