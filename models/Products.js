@@ -1,30 +1,50 @@
 const mongoose = require('mongoose');
 
 const testProduct = new mongoose.Schema({
-    name: {
+    tittel: {
+      type: String,
+      required: true
+    },
+    modell: {
+      type: String,
+      required: true
+    },
+    merke: {
+      type: String,
+      required: true
+    },
+    pris: {
+      type: Number,
+      required: true
+    },
+    artikkelnummer: {
       type: String,
       required: true
     }
-  });
+  }, {timestamps: true});
   
   const Product = mongoose.model('Shoe', testProduct);
 
-//   const newUser = new User({
-//   name: 'NINETEEN YOTTABITES'
+//   const newProduct = new Product({
+//   tittel: 'Adidas Tilfeldig sko 2, unisex sko',
+//   modell: "Tifeldig sko 2",
+//   merke: "Adidas",
+//   pris: 549,
+//   artikkelnummer: "CW-1820"
 // });
 
-// newUser.save()
+// newProduct.save()
 //   .then(() => {
-//     console.log('User created!');
+//     console.log('Product created!');
 //   })
 //   .catch((error) => {
 //     console.log(error);
 //   });
 
-  // testUser.post("save", function (doc, next){
-  //   console.log("input saved to DB", doc);
-  //   next();
-  // })
+//   testProduct.post("save", function (doc, next){
+//     console.log("input saved to DB", doc);
+//     next();
+//   })
 
 
 module.exports = Product;

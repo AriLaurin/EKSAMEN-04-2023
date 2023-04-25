@@ -2,21 +2,28 @@
 
 <header>
   <div class="headings">
-    <h1>COLLECTION:</h1>
+    <h1>Samling av produktene:</h1>
     <div class="nut-container">
-      <%if(name.length > 0){%>
-        <%name.forEach(names => {%>
-            <p><%=names.name%></p>
+      <%if(Product.length > 0){%>
+        <%Product.forEach(shoe => {%>
+            <p><%=shoe.name%></p>
         <%})%>
       <%}else{%>
         <p>THERES NOTHING TO DISPLAY</p>
       <%}%>
     </div>
-    
+    <h2>Legg til nytt produkt</h2>
     <form>
-      <h2>WRITE ANYTHING AND I WILL LOGG IT</h2>
-      <label for="INPUT1">INPUT1</label>
-      <input type="text" name="INPUT1">
+      <label for="TITTEL">TITTEL</label>
+      <input type="text" name="TITTEL">
+      <label for="MODELL">MODELL</label>
+      <input type="text" name="MODELL">
+      <label for="MERKE">MERKE</label>
+      <input type="text" name="MERKE">
+      <label for="PRIS">PRIS</label>
+      <input type="number" name="PRIS">
+      <label for="ARTIKKELNUMMER">ARTIKKELNUMMER</label>
+      <input type="text" name="ARTIKKELNUMMER">
     </form>
   </div>
 </header>
@@ -31,20 +38,29 @@
       e.preventDefault();
 
       //form values
-      const INPUT1 = form.INPUT1.value
-
+      const TITTEL = form.TITTEL.value
+      const MODELL = form.MODELL.value
+      const MERKE = form.MERKE.value
+      const PRIS = form.PRIS.value
+      const ARTIKKELNUMMER = form.ARTIKKELNUMMER.value
 
       try {
             //sender data som lager bruker
             const res = await fetch('/',{
                 method: 'post',
-                body: JSON.stringify({name: INPUT1}),
+                body: JSON.stringify({tittel: TITTEL, modell: MODELL, merke: MERKE, pris: PRIS, artikkelnummer: ARTIKKELNUMMER}),
                 headers: {'Content-Type': 'application/json'}
             })
-            const user = await res.json();
+            const shoe = await res.json();
 
-            const p = document.createElement("p");
-            p.innerText = user.name;
+            notcont.innerHTML = 
+            `
+            <p>${TITTEL}</p>
+            <p>${MODELL}</p>
+            <p>${MERKE}</p>
+            <p>${PRIS}kr</p>
+            <p>${ARTIKKELNUMMER}</p>
+            `           
             console.log(user);
 
         } catch (err) {
