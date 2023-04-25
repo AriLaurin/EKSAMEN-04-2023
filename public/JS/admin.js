@@ -1,7 +1,5 @@
 const form = document.querySelector("form");
-const nutcont = document.querySelector(".nut-container");
 const formButton = document.querySelector("#formsubmit");
-const productCont = document.querySelector(".product-cont");
 
 
 formButton.addEventListener("click", async (e) => {
@@ -22,18 +20,8 @@ formButton.addEventListener("click", async (e) => {
             headers: {'Content-Type': 'application/json'}
         })
         const shoe = await res.json();
-
-        nutcont.innerHTML += 
-        `
-        <div class="product-cont">
-        <h3>${TITTEL}</h3>
-        <p>${MODELL}</p>
-        <p>${MERKE}</p>
-        <p>${PRIS}kr</p>
-        <p>${ARTIKKELNUMMER}</p>
-        </div>
-        `           
-        console.log(user);
+           
+        console.log(shoe);
 
     } catch (err) {
         console.log(err)
