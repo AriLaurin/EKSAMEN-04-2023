@@ -1,3 +1,6 @@
 .product-cont{
     border-left: 0.5em solid black;
 }
+a{
+    padding: 1em;
+}

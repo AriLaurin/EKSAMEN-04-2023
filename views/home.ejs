@@ -2,16 +2,16 @@
 
 <header>
   <div class="headings">
-    <h1>Samling av produktene:</h1>
+    <h1>Råeste Produktene (TOPP 10):</h1>
     <div class="nut-container">
       <%if(productresult.length > 0){%>
         <%productresult.forEach(shoe => {%>
           <div class="product-cont">
             <h3><%=shoe.tittel%></h3>
-            <p><%=shoe.modell%></p>
-            <p><%=shoe.merke%></p>
-            <p><%=shoe.pris%>kr</p>
-            <p><%=shoe.artikkelnummer%></p>
+            <p><b>MODELL:</b> <%=shoe.modell%></p>
+            <p><b>MERKE:</b> <%=shoe.merke%></p>
+            <p><b>PRIS:</b> <%=shoe.pris%>kr</p>
+            <p><b>ARTIKKELNUMMER:</b> <%=shoe.artikkelnummer%></p>
           </div>
         <%})%>
       <%}else{%>
