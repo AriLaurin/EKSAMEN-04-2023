@@ -1,0 +1,80 @@
+<%- include('partials/header'); -%>
+
+<header>
+  <div class="headings">
+    <h1>COLLECTION:</h1>
+    <div class="nut-container">
+      <%if(name.length > 0){%>
+        <%name.forEach(names => {%>
+            <p><%=names.name%></p>
+        <%})%>
+      <%}else{%>
+        <p>THERES NOTHING TO DISPLAY</p>
+      <%}%>
+    </div>
+    
+    <form>
+      <h2>WRITE ANYTHING AND I WILL LOGG IT</h2>
+      <label for="INPUT1">INPUT1</label>
+      <input type="text" name="INPUT1">
+    </form>
+  </div>
+</header>
+
+<script>
+  
+    const button = document.querySelector("button");
+    const form = document.querySelector("form");
+    const nutcont = document.querySelector(".nut-container");
+
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      //form values
+      const INPUT1 = form.INPUT1.value
+
+
+      try {
+            //sender data som lager bruker
+            const res = await fetch('/',{
+                method: 'post',
+                body: JSON.stringify({name: INPUT1}),
+                headers: {'Content-Type': 'application/json'}
+            })
+            const user = await res.json();
+
+            const p = document.createElement("p");
+            p.innerText = user.name;
+            console.log(user);
+
+        } catch (err) {
+            console.log(err)
+        }
+
+    })
+
+
+
+    button.addEventListener("click", async (e) => {
+      try {
+            //sender data som lager bruker
+            const res = await fetch('/',{
+                method: 'post',
+                body: JSON.stringify({}),
+                headers: {'Content-Type': 'application/json'}
+            })
+            //venter på user data
+            const data = await res.json()
+            console.log(data)
+
+
+        } catch (err) {
+            console.log(err)
+        }
+    })
+
+</script>
+
+
+<%- include('partials/footer'); -%>
