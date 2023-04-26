@@ -136,3 +136,12 @@ form {
 footer{
     text-align: center;
 }
+
+.delete{
+  background-color: #E9B872;
+  border: 0px;
+}
+
+.delete:hover{
+  cursor: pointer;
+}
