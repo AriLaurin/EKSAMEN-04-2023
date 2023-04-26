@@ -23,6 +23,7 @@
               <p><b>MERKE:</b> <%=shoe.merke%></p>
               <p><b>PRIS:</b> <%=shoe.pris%>kr</p>
               <p><b>ARTIKKELNUMMER:</b> <%=shoe.artikkelnummer%></p>
+              <button class ="delete" data-doc="<%=shoe._id%>" onclick="deleteTRASH('<%=shoe._id%>')">DELETE</button>
             </div>
           <%})%>
         <%}else{%>
@@ -31,6 +32,20 @@
       </div>
   </div>
 </div>
+
+<script>
+  
+  function deleteTRASH(id) {
+    const endpoint = `/${id}`;
+    console.log(endpoint);
+    fetch(endpoint, {
+      method: "DELETE",
+    })
+    .then(response => response.json())
+    .then(data => window.location.href = data.redirect)
+    .catch(err => console.log(err));
+  }
+</script>
 
 
 <%- include('partials/footer'); -%>

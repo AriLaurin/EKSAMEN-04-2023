@@ -12,6 +12,8 @@ formButton.addEventListener("click", async (e) => {
   const PRIS = form.PRIS.value
   const ARTIKKELNUMMER = form.ARTIKKELNUMMER.value
 
+
+
   try {
         //sender data som lager bruker
         const res = await fetch('/',{

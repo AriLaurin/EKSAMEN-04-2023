@@ -8,6 +8,7 @@ router.post("/", Controller.home_post);
 router.get("/admin", Controller.admin_get);
 router.get("/login", Controller.login_get);
 router.post("/login", Controller.login_post);
+router.delete("/:id", Controller.home_delete);
 
 
 module.exports = router;
