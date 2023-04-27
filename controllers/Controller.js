@@ -110,6 +110,18 @@ module.exports.update_post = (req, res) => {
     
     }
 
+    module.exports.delete_post = (req, res) => {
+        const {artikkelnummer} = req.body;
+        console.log(artikkelnummer);
+        Product.findOneAndDelete({artikkelnummer})
+        .then(result => {
+            console.log("product removed");
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    }
+
 module.exports.home_delete = (req, res) => {
     const productID = req.params.id;
     console.log("test");

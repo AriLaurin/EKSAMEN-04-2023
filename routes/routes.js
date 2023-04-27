@@ -7,6 +7,7 @@ router.get("/", Controller.home_get);
 router.post("/", Controller.home_post);
 router.get("/admin", Controller.admin_get);
 router.post("/update", Controller.update_post);
+router.post("/delete", Controller.delete_post);
 router.get("/login", Controller.login_get);
 router.post("/login", Controller.login_post);
 router.delete("/:id", Controller.home_delete);
