@@ -67,6 +67,10 @@ module.exports.admin_get = async (req,res) => {
     res.render("admin")
 }
 
+module.exports.adminguide_get = async (req,res) => {
+    res.render("adminguide")
+}
+
 module.exports.home_post = async (req, res) => {
 
 const {tittel, modell, merke, pris, artikkelnummer} = req.body;
