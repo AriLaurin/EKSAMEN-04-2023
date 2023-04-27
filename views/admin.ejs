@@ -10,7 +10,7 @@
         </a>
       </div>
 
-      <h1 id="form-admin">Legg til nytt produkt</h1>
+      <h1 class="form-admin">Legg til nytt produkt</h1>
     <div class="form-cont">
       <form>
         <label for="TITTEL">TITTEL</label>
@@ -24,6 +24,24 @@
         <label for="ARTIKKELNUMMER">ARTIKKELNUMMER</label>
         <input type="text" name="ARTIKKELNUMMER">
         <button id="formsubmit" type="button">Legg til produkt</button>
+      </form>
+    </div>
+
+    <h1 class="form-admin">Oppdater eksisterende produkt</h1>
+    <div class="form-cont">
+      <form class="formupdate">
+        <label for="ARTIKKELNUMMERupdate">EKISTERENDE ARTIKKELNUMMER</label>
+        <input type="text" name="ARTIKKELNUMMERupdate">
+        <label for="TITTELupdate">TITTEL</label>
+        <input type="text" name="TITTELupdate">
+        <label for="MODELLupdate">MODELL</label>
+        <input type="text" name="MODELLupdate">
+        <label for="MERKEupdate">MERKE</label>
+        <input type="text" name="MERKEupdate">
+        <label for="PRISupdate">PRIS</label>
+        <input type="number" name="PRISupdate">
+
+        <button id="formsubmitupdate" type="button">Oppdater</button>
       </form>
     </div>
 

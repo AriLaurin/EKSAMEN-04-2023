@@ -81,6 +81,35 @@ catch(err){
 
 }
 
+module.exports.update_post = (req, res) => {
+
+    const {tittel, modell, merke, pris, artikkelnummer} = req.body;
+
+     Product.findOne({artikkelnummer})
+     .then((product) => {
+        if (!product) {
+            console.log('Product not found');
+            return;
+          }
+      
+          product.tittel = tittel;
+          product.modell = modell;
+          product.merke = merke;
+          product.pris = pris;
+      
+          return product.save();
+     })
+     .then(() => {
+        console.log('Product Updated');
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+   
+    
+    }
+
 module.exports.home_delete = (req, res) => {
     const productID = req.params.id;
     console.log("test");

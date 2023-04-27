@@ -1,6 +1,9 @@
 const form = document.querySelector("form");
 const formButton = document.querySelector("#formsubmit");
 
+const formUpdate = document.querySelector(".formupdate");
+const formsubmitUpdate = document.querySelector("#formsubmitupdate");
+
 
 formButton.addEventListener("click", async (e) => {
   e.preventDefault();
@@ -34,3 +37,36 @@ formButton.addEventListener("click", async (e) => {
     }
 
 })
+
+formsubmitUpdate.addEventListener("click", async (e) => {
+    e.preventDefault();
+  
+    //form values
+    const TITTEL = formUpdate.TITTELupdate.value
+    const MODELL = formUpdate.MODELLupdate.value
+    const MERKE = formUpdate.MERKEupdate.value
+    const PRIS = formUpdate.PRISupdate.value
+    const ARTIKKELNUMMER = formUpdate.ARTIKKELNUMMERupdate.value
+  
+  
+  
+    try {
+          //sender data som lager bruker
+          const res = await fetch('/update',{
+              method: 'post',
+              body: JSON.stringify({tittel: TITTEL, modell: MODELL, merke: MERKE, pris: PRIS, artikkelnummer: ARTIKKELNUMMER}),
+              headers: {'Content-Type': 'application/json'}
+          })
+          const shoe = await res.json();
+             
+          console.log(shoe);
+  
+          if (shoe.shoes){ //if user data has been posted
+              location.assign("/"); //send them to adminpage
+          }
+  
+      } catch (err) {
+          console.log(err)
+      }
+  
+  })
